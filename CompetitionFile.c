@@ -61,30 +61,42 @@ task autonomous()
 {
 	//this code assumes you're on the right side
 
+	// rotate to the left
 	motor[LBMotor] = 63;  //currently for time
 	wait1Msec(2500);
 	motor[LBMotor] = 0;
+	
+	//move forward a bit
+	motor[LBMotor] = 63;
+	motor[RBMotor] = 63;
+	wait1MSec(1000);
 
+	// rotate to the right
 	motor[RBMotor] = -63;  //currently for time
 	wait1Msec(2500);
 	motor[RBMotor] = 0;
 
+// this code assumes you're on the left side
 /*motor[RBMotor] = 63;  //currently for time
 	wait1Msec(2500);
 	motor[RBMotor] = 0;
+	
+	//move forward a bit
+	motor[LBMotor] = 63;
+	motor[RBMotor] = 63;
+	wait1MSec(1000);
 
 	motor[LBMotor] = -63;  //currently for time
 	wait1Msec(2500);
 	motor[LBMotor] = 0; */
 
 	// move forward
-
 	while(SensorValue[dgtl1] < (360 * 6))
 	{
 		motor[port1] = 63;
 		motor[port2] = 63;
 		motor[port3] = 63;
-	  motor[port4] = 63;
+	  	motor[port4] = 63;
 	}
 
 	SensorValue[dgtl1] = 0;
@@ -106,23 +118,15 @@ task usercontrol()
 
   while (true)
   {
-
+    // This is the main execution loop for the user control program.
+    // Each time through the loop your program should update motor + servo
+    // values based on feedback from the joysticks.
+  
   	motor[LBMotor] = vexRT[Ch3];
   	motor[LFMotor] = vexRT[Ch3];
   	motor[RBMotor] = vexRT[Ch3];
   	motor[RLMotor] = vexRT[Ch3];
-  	motor[ArmMotor]= vexRT[Ch2];
-
-    // This is the main execution loop for the user control program.
-    // Each time through the loop your program should update motor + servo
-    // values based on feedback from the joysticks.
-
-    // ........................................................................
-    // Insert user code here. This is where you use the joystick values to
-    // update your motors, etc.
-    // ........................................................................
-
-    // Remove this function call once you have "real" code.
-    UserControlCodePlaceholderForTesting();
+  	motor[ArmMotor]= vexRT[Ch2];   // need different channel number
+	  
   }
 }
