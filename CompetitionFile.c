@@ -126,7 +126,17 @@ task usercontrol()
   	motor[LFMotor] = vexRT[Ch3];
   	motor[RBMotor] = vexRT[Ch3];
   	motor[RLMotor] = vexRT[Ch3];
-  	motor[ArmMotor]= vexRT[Ch2];   // need different channel number
+	  
+	if(vexRT[Btn8U] == 1){
+	   motor[ArmMotor] = 63;   
+	}
+	else if(vexRT[Btn8D] == 1){
+	   motor[ArmMotor] = -63;
+	}
+	else{
+	   motor[ArmMotor] = 0;
+	}
+
 	  
   }
 }
