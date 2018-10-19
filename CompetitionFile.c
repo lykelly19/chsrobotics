@@ -122,8 +122,8 @@ task usercontrol()
     // Each time through the loop your program should update motor + servo
     // values based on feedback from the joysticks.
   
-  	motor[LBMotor] = vexRT[Ch3];
-  	motor[LFMotor] = vexRT[Ch3];
+  	motor[LBMotor] = vexRT[Ch2];
+  	motor[LFMotor] = vexRT[Ch2];
   	motor[RBMotor] = vexRT[Ch3];
   	motor[RLMotor] = vexRT[Ch3];
 	  
