@@ -95,13 +95,13 @@ task autonomous()
 	motor[LBMotor] = 0; */
 
 	// move forward
-	while(SensorValue[dgtl1] < (360 * 6))
-	{
-		motor[port1] = 63;
-		motor[port2] = 63;
-		motor[port3] = 63;
-	  	motor[port4] = 63;
-	}
+
+	motor[port1] = 63;
+	motor[port2] = 63;
+	motor[port3] = 63;
+  	motor[port4] = 63;
+	wait1MSec(3000);
+
 
 	SensorValue[dgtl1] = 0;
 }
