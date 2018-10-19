@@ -69,6 +69,8 @@ task autonomous()
 	//move forward a bit
 	motor[LBMotor] = 63;
 	motor[RBMotor] = 63;
+	motor[LFMotor] = 63;
+	motor[RFMotor] = 63;
 	wait1MSec(1000);
 
 	// rotate to the right
@@ -84,6 +86,8 @@ task autonomous()
 	//move forward a bit
 	motor[LBMotor] = 63;
 	motor[RBMotor] = 63;
+	motor[RFMotor] = 63;
+	motor[LFMotor] = 63;
 	wait1MSec(1000);
 
 	motor[LBMotor] = -63;  //currently for time
